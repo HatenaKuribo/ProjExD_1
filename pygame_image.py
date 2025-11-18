@@ -33,7 +33,8 @@ def main():
         elif key_list[pg.K_LEFT]:
             player_rct.move_ip((-1,0))
         elif key_list[pg.K_RIGHT]:
-            player_rct.move_ip((1,0))
+            player_rct.move_ip((2,0))
+        player_rct.move_ip((-1,0))
         screen.blit(player_img, player_rct)
         pg.display.update()
         tmr += 1 
