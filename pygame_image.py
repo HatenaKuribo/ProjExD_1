@@ -9,7 +9,6 @@ def main():
     pg.display.set_caption("はばたけ！こうかとん")
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
-    clock.tick(200)
     bg_img1 = pg.image.load("fig/pg_bg.jpg")
     bg_img2 = pg.image.load("fig/pg_bg.jpg")
     bg_img2 = pg.transform.flip(bg_img2, True, False)
@@ -23,11 +22,14 @@ def main():
 
         screen.blit(bg_img1, [-x, 0])
         screen.blit(bg_img2, [-x+1600, 0])
+        screen.blit(bg_img1, [-x+3200, 0])
         screen.blit(player_img, [300,200])
         pg.display.update()
         tmr += 1 
-        x += 1       
-        clock.tick(10)
+        x += 1
+        if x == 3200:
+            x = 0
+        clock.tick(200)
 
 
 if __name__ == "__main__":
