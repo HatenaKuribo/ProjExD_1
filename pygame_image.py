@@ -12,6 +12,7 @@ def main():
     clock.tick(200)
     bg_img1 = pg.image.load("fig/pg_bg.jpg")
     bg_img2 = pg.image.load("fig/pg_bg.jpg")
+    bg_img2 = pg.transform.flip(bg_img2, True, False)
     player_img = pg.image.load("fig/3.png")
     player_img = pg.transform.flip(player_img, True, False)
     tmr = 0
