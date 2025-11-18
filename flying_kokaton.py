@@ -17,14 +17,13 @@ def main():
     player_rct = player_img.get_rect()
     player_rct.center = 300,200
     tmr = 0
-    x = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img1, [-x, 0])
-        screen.blit(bg_img2, [-x+1600, 0])
-        screen.blit(bg_img1, [-x+3200, 0])
+        screen.blit(bg_img1, [-tmr, 0])
+        screen.blit(bg_img2, [-tmr+1600, 0])
+        screen.blit(bg_img1, [-tmr+3200, 0])
         key_list = pg.key.get_pressed()
         player_x = 0
         player_y = 0
@@ -39,10 +38,9 @@ def main():
         player_rct.move_ip((player_y-1,player_x))
         screen.blit(player_img, player_rct)
         pg.display.update()
-        tmr += 1 
-        x += 1
-        if x == 3200:
-            x = 0
+        tmr += 1
+        if tmr == 3200:
+            tmr = 0
         clock.tick(200)
 
 
